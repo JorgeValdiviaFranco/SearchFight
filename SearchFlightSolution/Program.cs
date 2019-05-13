@@ -17,8 +17,8 @@ namespace SearchFight
         {
             try
             {
-                string[] args2 = { ".net", "java" };
-                Search(args2);
+            
+                Search(args);
             }
             catch (Exception ex)
             {
