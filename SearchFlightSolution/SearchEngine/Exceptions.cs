@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SearchFight.SearchRunners
+namespace SearchFight.SearchEngine
 {
     public class ConfigurationException : Exception
     {

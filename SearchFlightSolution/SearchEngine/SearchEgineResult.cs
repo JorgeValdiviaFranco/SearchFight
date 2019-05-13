@@ -1,10 +1,10 @@
 ﻿using System;
-namespace SearchFlightSolution.SearchEngine
+namespace SearchFight.SearchEngine
 {
-    public class SearchEgineResult
+    public class SearchEngineResult
     {
-        public SearchEgineResult()
-        {
-        }
+        public string Name { get; set; }
+        public long Count { get; set; }
+        public string Query { get; set; }
     }
 }

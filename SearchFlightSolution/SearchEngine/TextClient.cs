@@ -5,18 +5,20 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using SearchFight.Utilities;
+using SearchFight.Utils;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace SearchFight.SearchRunners
+namespace SearchFight.SearchEngine
 {
     [XmlInclude(typeof(HttpTextClient))]
     public abstract class TextClient
     {
         public static readonly TextClient Default = new HttpTextClient();
 
-        public abstract Task<string> GetResponseText(Uri uri);
+      
+        public abstract string GetResponseText(Uri uri);
+
     }
 
     public class HttpTextClient : TextClient
@@ -27,7 +29,10 @@ namespace SearchFight.SearchRunners
         [DefaultValue(DefaultTimeout)]
         public long Timeout { get; set; }
 
-        public override async Task<string> GetResponseText(Uri uri)
+       
+
+
+        public  override string GetResponseText(Uri uri)
         {
             using (HttpClient client = new HttpClient(new HttpClientHandler() { AutomaticDecompression = System.Net.DecompressionMethods.Deflate | System.Net.DecompressionMethods.GZip }))
             {
@@ -35,11 +40,11 @@ namespace SearchFight.SearchRunners
                     client.Timeout = TimeSpan.FromMilliseconds(Timeout);
                 else
                     client.Timeout = TimeSpan.FromMilliseconds(DefaultTimeout);
-                    
+
 
                 try
                 {
-                    return await client.GetStringAsync(uri);
+                    return client.GetStringAsync(uri).Result;
                 }
                 catch (HttpRequestException ex)
                 {

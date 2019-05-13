@@ -5,4 +5,27 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="SearchRunners\ResultParser.cs" />
+    <Compile Remove="SearchException.cs" />
+    <Compile Remove="Utilities\ProgressReporter.cs" />
+    <Compile Remove="SearchEngine\ResultParser.cs" />
+    <Compile Remove="SearchEngine\ResultParser.cs" />
+    <Compile Remove="SearchRunners\QueryFormatter.cs" />
+    <Compile Remove="Results.cs" />
+    <Compile Remove="Results.cs" />
+    <Compile Remove="Utilities\ConsoleHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove=".DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="SearchEngineConfiguration.xml">
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

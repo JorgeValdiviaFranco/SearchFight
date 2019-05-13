@@ -13,7 +13,8 @@ namespace SearchFight.SearchEngine
     {
         [XmlAttribute]
         public string Name { get; set; }
+        public abstract long Run(string query);
 
-        public abstract Task<long> Run(string query);
+
     }
 }

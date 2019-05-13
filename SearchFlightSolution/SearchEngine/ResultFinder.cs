@@ -5,11 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-//using System.Web.Script.Serialization;
-using System.Web.UI;
 using System.Xml.Serialization;
 
-namespace SearchFight.SearchRunners
+namespace SearchFight.SearchEngine
 {
     [XmlInclude(typeof(JSONResultFinder))]
     [XmlInclude(typeof(RegexResultFinder))]
@@ -28,12 +26,6 @@ namespace SearchFight.SearchRunners
         {
             try
             {
-
-
-
-
-
-
                 return Newtonsoft.Json.JsonConvert.DeserializeObject(responseText);
             }
             catch (ArgumentException ex)

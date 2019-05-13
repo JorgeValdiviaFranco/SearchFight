@@ -1,4 +1,4 @@
-﻿using SearchFight.Utilities;
+﻿using SearchFight.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace SearchFight.SearchRunners
+namespace SearchFight.SearchEngine
 {
     public class WebSearchEngine : SerializableSearchRunner
     {
@@ -25,7 +25,8 @@ namespace SearchFight.SearchRunners
 
         public WebSearchEngine() { }
 
-        public override async Task<long> Run(string query)
+     
+        public override long Run(string query)
         {
             if (Finder == null)
                 throw new ConfigurationException("Finder cannot be null.");
@@ -37,7 +38,7 @@ namespace SearchFight.SearchRunners
                 throw new ConfigurationException("QueryName cannot be empty.");
 
             var uriBuilder = BuildUri(query);
-            var responseText = await (Client ?? TextClient.Default).GetResponseText(uriBuilder.Uri);
+            var responseText = (Client ?? TextClient.Default).GetResponseText(uriBuilder.Uri);
             var resultText = Finder.Find(responseText);
             return Parse(resultText);
         }
@@ -57,8 +58,7 @@ namespace SearchFight.SearchRunners
                    parameters[param.Key] = param.Value;
             }
 
-            parameters[QueryName] = (QueryFormatter ?? QueryFormatter.Default).FormatQuery(query);
-
+            parameters[QueryName] = query;   
             try
             {
                 var uriBuilder = new UriBuilder(Address);

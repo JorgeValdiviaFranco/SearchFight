@@ -6,7 +6,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace SearchFight.Utilities
+namespace SearchFight.Utils
 {
     [XmlRoot("StringDictionary")]
     public class StringDictionary : Dictionary<string, string>, IXmlSerializable

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchFlightSolution", "SearchFlightSolution\SearchFlightSolution.csproj", "{EF51140D-53BA-455A-944E-0B903815E80B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchFightTests", "SearchFightTests\SearchFightTests.csproj", "{F8862F52-6526-4A6C-9A04-DDCD5A20450B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{EF51140D-53BA-455A-944E-0B903815E80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF51140D-53BA-455A-944E-0B903815E80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF51140D-53BA-455A-944E-0B903815E80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8862F52-6526-4A6C-9A04-DDCD5A20450B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8862F52-6526-4A6C-9A04-DDCD5A20450B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8862F52-6526-4A6C-9A04-DDCD5A20450B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8862F52-6526-4A6C-9A04-DDCD5A20450B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

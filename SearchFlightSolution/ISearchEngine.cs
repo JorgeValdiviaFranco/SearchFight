@@ -9,29 +9,26 @@ namespace SearchFight
     public interface ISearchEngine
     {
         string Name { get; }
-        bool Disabled { get; }
-        Task<long> Run(string query);
+         long Run(string query);
+
     }
 
-    public class SearchRunner : ISearchEngine
+    public class SearchEngineRunner : ISearchEngine
     {
         public string Name { get; set; }
         public Dictionary<string, long> Results { get; set; }
 
-        public bool Disabled
-        {
-            get { return false; }
-        }
 
-        public SearchRunner(string name, Dictionary<string, long> results)
+        public SearchEngineRunner(string name, Dictionary<string, long> results)
         {
             Name = name;
             Results = results;
         }
 
-        public Task<long> Run(string query)
+        public long Run(string query)
         {
-            return Task.FromResult(Results[query]);
+            return Results[query];
+
         }
     }
 }

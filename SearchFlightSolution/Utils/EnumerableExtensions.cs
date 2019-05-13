@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SearchFight.Utilities
+namespace SearchFight.Utils
 {
     public static class EnumerableExtensions
     {

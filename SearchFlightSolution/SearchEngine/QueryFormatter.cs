@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SearchFight.SearchRunners
+namespace SearchFight.SearchEngine
 {
     [XmlInclude(typeof(DefaultQueryFormatter))]
     [XmlInclude(typeof(QueryStringFormatter))]
